@@ -1,0 +1,23 @@
+{
+  "name": "react-boilerplate",
+  "version": "1.0.0",
+  "description": "Boilerplate com storybook e variáveis de ambiente configuradas para melhor performance da aplicação",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "\u0016https://github.com/AMarcosCastelo/react-boilerplate.git"
+  },
+  "keywords": [
+    "ReactJS",
+    "JS",
+    "JavaScript",
+    "Webpack",
+    "Storybook",
+    "TDD"
+  ],
+  "author": "Antonio Marcos Castelo <marcos-12marcos@hotmail.com> (https://github.com/AMarcosCastelo)",
+  "license": "MIT"
+}
