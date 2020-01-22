@@ -6,7 +6,9 @@
   "scripts": {
     "start": "node server.js",
     "build": "webpack",
-    "start:dev": "webpack-dev-server --mode development --hot"
+    "start:dev": "webpack-dev-server --mode development --hot",
+    "lint": "./node_modules/.bin/eslint src/*js",
+    "prepush": "yarn lint"
   },
   "repository": {
     "type": "git",
@@ -39,6 +41,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-standard": "^4.0.1",
+    "husky": "^4.2.0",
     "react-hot-loader": "^4.12.19",
     "source-map-loader": "^0.2.4",
     "webpack": "^4.41.5",
