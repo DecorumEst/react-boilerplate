@@ -8,7 +8,7 @@
     "build": "webpack",
     "start:dev": "webpack-dev-server --mode development --hot",
     "lint": "./node_modules/.bin/eslint src/*js",
-    "prepush": "yarn lint"
+    "prepush": "npm run lint"
   },
   "repository": {
     "type": "git",
