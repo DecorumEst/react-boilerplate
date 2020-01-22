@@ -7,8 +7,13 @@
     "start": "node server.js",
     "build": "webpack",
     "start:dev": "webpack-dev-server --mode development --hot",
-    "lint": "./node_modules/.bin/eslint src/*js",
-    "prepush": "npm run lint"
+    "lint": "./node_modules/.bin/eslint src/*js"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
   },
   "repository": {
     "type": "git",
