@@ -4,8 +4,9 @@
   "description": "Boilerplate com storybook e variáveis de ambiente configuradas para melhor performance da aplicação",
   "main": "index.js",
   "scripts": {
+    "start": "node server.js",
     "build": "webpack",
-    "start:dev": "webpack-dev-server"
+    "start:dev": "webpack-dev-server --mode development --hot"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,16 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "babel-loader": "^8.0.6",
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.0",
+    "eslint-loader": "^3.0.3",
+    "eslint-plugin-import": "^2.20.0",
+    "eslint-plugin-node": "^11.0.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.18.0",
+    "eslint-plugin-standard": "^4.0.1",
+    "react-hot-loader": "^4.12.19",
+    "source-map-loader": "^0.2.4",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
