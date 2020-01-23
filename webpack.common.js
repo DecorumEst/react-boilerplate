@@ -5,12 +5,9 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
-    'webpack/hot/only-dev-server',
     path.join(__dirname, 'src', 'index')
   ],
   output: {
@@ -20,8 +17,7 @@ module.exports = {
   resolve: {
     alias: {
       src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src/components'),
-      'react-dom': '@hot-loader/react-dom'
+      components: path.join(__dirname, 'src/components')
     }
   },
   plugins: [
@@ -30,7 +26,6 @@ module.exports = {
         'NODE_ENV': '"production"'
       }
     }),
-    new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: 'React App',
