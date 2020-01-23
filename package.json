@@ -4,13 +4,14 @@
   "description": "Boilerplate com storybook e variáveis de ambiente configuradas para melhor performance da aplicação",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js",
-    "build": "webpack",
+    "build": "webpack --mode production",
     "start:dev": "webpack-dev-server --mode development --hot",
     "lint": "./node_modules/.bin/eslint src/*js",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
     "test:coverage": "nyc yarn test",
-    "test:watch": "yarn test -- --watch"
+    "test:watch": "yarn test -- --watch",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "husky": {
     "hooks": {
@@ -22,8 +23,13 @@
     "functions": 80,
     "lines": 80,
     "check-coverage": true,
-    "reporters": ["text", "html"],
-    "exclude": ["tests/**"]
+    "reporters": [
+      "text",
+      "html"
+    ],
+    "exclude": [
+      "tests/**"
+    ]
   },
   "repository": {
     "type": "git",
@@ -48,6 +54,10 @@
     "@babel/preset-env": "^7.8.3",
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.3",
+    "@storybook/addon-actions": "^5.3.8",
+    "@storybook/addon-links": "^5.3.8",
+    "@storybook/addons": "^5.3.8",
+    "@storybook/react": "^5.3.8",
     "babel-loader": "^8.0.6",
     "chai": "^4.2.0",
     "eslint": "^6.8.0",
