@@ -1,3 +1,4 @@
+/* eslint-disable quote-props */
 'use strict'
 
 const path = require('path');
@@ -6,32 +7,26 @@ const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  devtool: 'source-map',
   entry: [
     'react-hot-loader/patch',
     'webpack/hot/only-dev-server',
     path.join(__dirname, 'src', 'index')
   ],
   output: {
-    filename: '[name]-[hash].js',
     path: path.join(__dirname, 'dist'),
-    publicPath: ''
+    filename: '[name]-[hash].js'
   },
   resolve: {
     alias: {
       'react-dom': '@hot-loader/react-dom'
     }
   },
-  // webpack-dev-server
-  devServer: {
-    stats: {
-      children: false,
-      maxModules: 0
-    },
-    compress: true,
-    port: 3000
-  },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        'NODE_ENV': '"production"'
+      }
+    }),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: 'React App',
