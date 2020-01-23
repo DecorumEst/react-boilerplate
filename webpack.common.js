@@ -19,6 +19,8 @@ module.exports = {
   },
   resolve: {
     alias: {
+      src: path.join(__dirname, 'src'),
+      components: path.join(__dirname, 'src/components'),
       'react-dom': '@hot-loader/react-dom'
     }
   },
@@ -32,7 +34,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: 'React App',
-      template: path.join(__dirname, 'src', 'index.html')
+      template: path.join(__dirname, 'src/index.html')
     }),
     new MiniCssExtractPlugin()
   ],
@@ -57,7 +59,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /(node_modules|bower_components)/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader']
+        use: [MiniCssExtractPlugin.loader, 'css-loader?modules']
       }
     ]
   }
