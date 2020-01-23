@@ -1,9 +1,10 @@
 'use strict';
 import { hot } from 'react-hot-loader';
 import React from 'react';
+import './css/style.css';
 
 function Title () {
-  return <h1>Hello World!!!</h1>;
+  return <h1>Hello World!!</h1>;
 };
 
 export default hot(module)(Title);
