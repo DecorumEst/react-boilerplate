@@ -5,6 +5,7 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: [
@@ -27,6 +28,7 @@ module.exports = {
         'NODE_ENV': '"production"'
       }
     }),
+    new DashboardPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: 'React App',
