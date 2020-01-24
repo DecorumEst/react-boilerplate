@@ -11,6 +11,9 @@ module.exports = merge(common, {
     'react-hot-loader/patch',
     'webpack/hot/only-dev-server'
   ],
+  output: {
+    filename: '[name].js'
+  },
   resolve: {
     alias: {
       'react-dom': '@hot-loader/react-dom'

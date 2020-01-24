@@ -10,32 +10,37 @@ module.exports = {
   entry: [
     join(__dirname, '..', 'src/index')
   ],
+
   output: {
     path: join(__dirname, '..', 'dist'),
     filename: '[name]-[chunkhash].js'
   },
+
   resolve: {
     alias: {
       src: join(__dirname, '..', 'src'),
       components: join(__dirname, '..', 'src/components')
     }
   },
+
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {
         'NODE_ENV': '"production"'
       }
     }),
-    // new webpack.HotModuleReplacementPlugin(),
+
     new HtmlPlugin({
       title: 'React App',
       template: join(__dirname, '..', 'src/index.html')
     }),
+
     new MiniCssExtractPlugin({
       filename: '[name]-[hash].css',
       chunkFilename: '[id].css'
     })
   ],
+
   module: {
     rules: [
       {
@@ -43,6 +48,21 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         loader: 'eslint-loader'
+      },
+      {
+        test: /\.(png|jpe?g|ico|ttf|svg|gif|eot|otf|webp|woff|woff2)$/i,
+        loader: 'file-loader',
+        options: {
+          name: 'assets/img/[name].[hash:8].[ext]'
+        }
+      },
+      {
+        test: /\.(mp4|webm|wav|mp3|m4a|gif|aac|oga)$/i,
+        loader: 'url-loader',
+        options: {
+          limit: 10000,
+          name: 'assets/media/url-loader[name].[hash:8].[ext]'
+        }
       },
       {
         test: /\.m?js$/,

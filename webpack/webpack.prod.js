@@ -23,7 +23,7 @@ module.exports = merge(common, {
       name: 'vendor',
       chunks: 'all',
       minSize: 30000,
-      minChunks: 1,
+      minChunks: 2,
       maxAsyncRequests: 6,
       maxInitialRequests: 4,
       automaticNameDelimiter: '~',
