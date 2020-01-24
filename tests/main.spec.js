@@ -1,7 +1,5 @@
 // yarn test || npm test
 
-import {} from 'chai';
-
 describe('Main', () => {
   before(() => {
     // Roda uma vez antes do bloco; "hooks"
