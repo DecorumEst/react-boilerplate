@@ -8,16 +8,16 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   entry: [
-    path.join(__dirname, 'src', 'index')
+    path.join(__dirname, '..', 'src/index')
   ],
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.join(__dirname, '..', 'dist'),
     filename: '[name]-[hash].js'
   },
   resolve: {
     alias: {
-      src: path.join(__dirname, 'src'),
-      components: path.join(__dirname, 'src/components')
+      src: path.join(__dirname, '..', 'src'),
+      components: path.join(__dirname, '..', 'src/components')
     }
   },
   plugins: [
@@ -29,7 +29,7 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: 'React App',
-      template: path.join(__dirname, 'src/index.html')
+      template: path.join(__dirname, '..', 'src/index.html')
     }),
     new MiniCssExtractPlugin()
   ],

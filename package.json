@@ -4,8 +4,8 @@
   "description": "Boilerplate com storybook e variáveis de ambiente configuradas para melhor performance da aplicação",
   "main": "index.js",
   "scripts": {
-    "build": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
-    "start": "webpack-dashboard -- webpack-dev-server --open --config webpack.dev.js --hot",
+    "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.prod.js",
+    "start": "webpack-dashboard -- webpack-dev-server --open --config ./webpack/webpack.dev.js --hot",
     "lint": "./node_modules/.bin/eslint src/*js",
     "test": "./node_modules/.bin/mocha tests/**/*.spec.js --require @babel/register",
     "test:coverage": "nyc yarn test",
