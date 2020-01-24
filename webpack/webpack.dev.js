@@ -16,6 +16,9 @@ module.exports = merge(common, {
       'react-dom': '@hot-loader/react-dom'
     }
   },
+  optimization: {
+    usedExports: true
+  },
   plugins: [
     new DashboardPlugin()
   ],

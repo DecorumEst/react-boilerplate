@@ -12,7 +12,7 @@ module.exports = {
   ],
   output: {
     path: join(__dirname, '..', 'dist'),
-    filename: '[name]-[hash].js'
+    filename: '[name]-[chunkhash].js'
   },
   resolve: {
     alias: {
@@ -26,12 +26,15 @@ module.exports = {
         'NODE_ENV': '"production"'
       }
     }),
-    new webpack.HotModuleReplacementPlugin(),
+    // new webpack.HotModuleReplacementPlugin(),
     new HtmlPlugin({
       title: 'React App',
       template: join(__dirname, '..', 'src/index.html')
     }),
-    new MiniCssExtractPlugin()
+    new MiniCssExtractPlugin({
+      filename: '[name]-[hash].css',
+      chunkFilename: '[id].css'
+    })
   ],
   module: {
     rules: [
