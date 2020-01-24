@@ -4,7 +4,7 @@ import React from 'react';
 import styles from 'src/css/style.css';
 
 function Title () {
-  return <h1 className={styles.title}>Hello World!!</h1>;
+  return <h1 className={styles.title}>{text}</h1>;
 };
 
 export default hot(module)(Title);

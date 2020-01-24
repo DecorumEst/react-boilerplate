@@ -50,18 +50,28 @@ module.exports = {
         loader: 'eslint-loader'
       },
       {
-        test: /\.(png|jpe?g|ico|ttf|svg|gif|eot|otf|webp|woff|woff2)$/i,
-        loader: 'file-loader',
-        options: {
-          name: 'assets/img/[name].[hash:8].[ext]'
-        }
+        test: /\.(png|jpe?g|ico|ttf|svg|gif|eot|otf|webp|woff|woff2|txt)$/i,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/img/[name].[hash].[ext]'
+            }
+          },
+          {
+            loader: 'raw-loader',
+            options: {
+              esModule: true
+            }
+          }
+        ]
       },
       {
         test: /\.(mp4|webm|wav|mp3|m4a|gif|aac|oga)$/i,
         loader: 'url-loader',
         options: {
           limit: 10000,
-          name: 'assets/media/url-loader[name].[hash:8].[ext]'
+          name: 'assets/media/[name].[hash:8].[ext]'
         }
       },
       {
