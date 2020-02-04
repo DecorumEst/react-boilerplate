@@ -27,9 +27,14 @@ module.exports = merge(common, {
   ],
   // webpack-dev-server
   devServer: {
+    historyApiFallback: true,
     stats: {
       children: false,
       maxModules: 0
+    },
+    overlay: {
+      warnings: true,
+      errors: true
     },
     compress: true,
     port: 3000

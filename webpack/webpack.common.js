@@ -57,12 +57,6 @@ module.exports = {
             options: {
               name: 'assets/img/[name].[hash].[ext]'
             }
-          },
-          {
-            loader: 'raw-loader',
-            options: {
-              esModule: true
-            }
           }
         ]
       },
@@ -87,7 +81,7 @@ module.exports = {
       {
         test: /\.css$/,
         exclude: /(node_modules|bower_components)/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader?modules']
+        use: [MiniCssExtractPlugin.loader, 'css-loader']
       }
     ]
   }

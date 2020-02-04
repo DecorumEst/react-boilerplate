@@ -1,6 +1,6 @@
 'use strict'
 
-const { join } = require('path')
+const { join } = require('path');
 const merge = require('webpack-merge');
 const common = require('./webpack.common');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');

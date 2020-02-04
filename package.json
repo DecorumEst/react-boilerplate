@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Boilerplate com storybook e variáveis de ambiente configuradas para melhor performance da aplicação",
   "main": "index.js",
-  "sideEffects": false,
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --config ./webpack/webpack.prod.js",
     "start": "webpack-dashboard -- webpack-dev-server --open --config ./webpack/webpack.dev.js --hot",
